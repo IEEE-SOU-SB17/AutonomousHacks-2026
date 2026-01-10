@@ -7,7 +7,7 @@ let backgroundImage = new Image();
 // Load the template image
 function loadTemplate() {
     // Always use the new template
-    backgroundImage.src = 'new_template.png';
+    backgroundImage.src = 'new_template2.0.png';
     backgroundImage.crossOrigin = 'anonymous';
 }
 
