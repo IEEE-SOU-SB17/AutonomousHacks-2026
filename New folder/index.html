@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutonomousHacks 2026 - Volunteer Card Generator</title>
+    <meta name="description"
+        content="Create your personalized volunteer card for AWS Student Community Day Ahmedabad 2025">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="volunteer-badge">Social Studio</div>
+                <h1 class="main-title">Card Creator</h1>
+                <p class="subtitle">AutonomousHacks 2026</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Left Panel - Controls -->
+            <div class="control-panel">
+                <div class="panel-card">
+                    <h2 class="panel-title">Create Your Card</h2>
+
+                    <!-- Photo Upload -->
+                    <div class="section">
+                        <label class="section-label">Upload Photo</label>
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" id="photoInput" accept="image/*" onchange="handlePhotoUpload(event)"
+                                hidden>
+                            <div class="upload-content" onclick="document.getElementById('photoInput').click()">
+                                <div class="upload-icon">📷</div>
+                                <p class="upload-text">Click to upload</p>
+                                <p class="upload-hint">JPG or PNG</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Selection (Hidden) -->
+                    <!-- <div class="section">
+                        <label class="section-label">Choose Template</label>
+                        <div class="template-buttons">
+                            <button class="template-btn active" onclick="switchTemplate('attending')" id="btn-attending">
+                                <span class="template-icon">👥</span>
+                                Attending
+                            </button>
+                            <button class="template-btn" onclick="switchTemplate('volunteering')" id="btn-volunteering">
+                                <span class="template-icon">🤝</span>
+                                Volunteering
+                            </button>
+                        </div>
+                    </div> -->
+
+                    <!-- Name Input -->
+                    <div class="section">
+                        <label class="section-label" for="nameInput">Your Name</label>
+                        <input type="text" id="nameInput" class="name-input" placeholder="Your name here" maxlength="30"
+                            oninput="drawCard()">
+                    </div>
+
+                    <!-- Download Button -->
+                    <div class="section">
+                        <button class="download-btn" id="downloadBtn" onclick="downloadCard()">
+                            Download Card
+                        </button>
+                    </div>
+
+                    <!-- Instructions -->
+                    <div class="instructions">
+                        <h3 class="instructions-title">Steps</h3>
+                        <ol class="instructions-list">
+                            <li>Upload your photo</li>
+                            <li>Pick a template</li>
+                            <li>Add name (optional)</li>
+                            <li>Download card</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Preview -->
+            <div class="preview-panel">
+                <div class="preview-header">
+                    <h2 class="preview-title">Preview</h2>
+                </div>
+
+                <div class="preview-container">
+                    <canvas id="cardCanvas" width="1080" height="1350"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">AWS Community Day</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
